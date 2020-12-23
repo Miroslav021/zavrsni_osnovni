@@ -1,0 +1,29 @@
+SHOW DATABASES;
+USE blog;
+SHOW TABLES;
+DESCRIBE posts;
+SELECT * FROM posts;
+
+CREATE TABLE comments (
+id INT AUTO_INCREMENT,
+author VARCHAR(255) NOT NULL,
+text VARCHAR(555) NOT NULL,
+post_id INT NOT NULL,
+PRIMARY KEY (id),
+FOREIGN KEY (post_id) REFERENCES posts(id)
+);
+
+INSERT INTO comments (author, text, post_id) VALUE ("Marko", "Tekst koji je napisao Marko", 1);
+INSERT INTO comments (author, text, post_id) VALUE ("Deda Mraz", "Tekst deda mraza", 1);
+INSERT INTO comments (author, text, post_id) VALUE ("komentar3", "tekst vezan za komentar 3", 1);
+INSERT INTO comments (author, text, post_id) VALUE ("Nikola", "Nikolin tekst", 2);
+INSERT INTO comments (author, text, post_id) VALUE ("Miroslav", "tekst od Miroslava", 2);
+INSERT INTO comments (author, text, post_id) VALUE ("Pera", "Pera kaze neki text", 3);
+INSERT INTO comments (author, text, post_id) VALUE ("Nemanja", "Nemanja kaze neki text", 3);
+
+DELETE FROM comments WHERE author = "Deda Mraz";
+Select * from comments
+    
+
+DESCRIBE comments;
+SELECT * FROM comments;
